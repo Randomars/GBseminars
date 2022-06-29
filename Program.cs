@@ -23,12 +23,12 @@ Console.Write("Квадрат числа равен " + num*num);
 */
 
 // Задача 3. Наименьшее и наибольшее из 2х чисел
-
+/*
 int min, max;
 
 Console.Write("Введите 1е число:");
 int num1=Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите 1е число:");
+Console.Write("Введите 2е число:");
 int num2=Convert.ToInt32(Console.ReadLine());
 
 if (num1>num2) 
@@ -53,3 +53,24 @@ else
 
 Console.WriteLine("Большее число " + max);
 Console.WriteLine("Меньшее число " + min);
+*/
+
+// Задача 4. Наибольшее из 3х чисел
+
+int max;
+
+Console.Write("Введите 1е число:");
+int num1=Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите 2е число:");
+int num2=Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите 3е число:");
+int num3=Convert.ToInt32(Console.ReadLine());
+
+if (num1>num2)
+    max=num1;
+else
+    max=num2;
+if (num3>max)
+    max=num3;
+
+Console.WriteLine("Большее число " + max);
