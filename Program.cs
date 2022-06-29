@@ -56,7 +56,7 @@ Console.WriteLine("Меньшее число " + min);
 */
 
 // Задача 4. Наибольшее из 3х чисел
-
+/*
 int max;
 
 Console.Write("Введите 1е число:");
@@ -74,3 +74,19 @@ if (num3>max)
     max=num3;
 
 Console.WriteLine("Большее число " + max);
+*/
+
+// Задача 6. Определение четности числа
+
+double numClon;
+
+Console.Write("Введите число:");
+int num=Convert.ToInt32(Console.ReadLine());
+numClon=num;
+
+if (num/2==numClon/2) 
+    Console.WriteLine("Четное число");
+else
+    Console.WriteLine("Нечетное число");
+
+
