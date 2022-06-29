@@ -77,7 +77,7 @@ Console.WriteLine("Большее число " + max);
 */
 
 // Задача 6. Определение четности числа
-
+/*
 double numClon;
 
 Console.Write("Введите число:");
@@ -88,5 +88,16 @@ if (num/2==numClon/2)
     Console.WriteLine("Четное число");
 else
     Console.WriteLine("Нечетное число");
+*/
 
+// Задача 8. Вывести ряд четных чисел до N
 
+int counter=2;
+Console.Write("Введите число:");
+int num=Convert.ToInt32(Console.ReadLine());
+
+while (counter<=num)
+{
+    Console.Write(counter + " ");
+    counter=counter+2;
+}
