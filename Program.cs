@@ -1,18 +1,19 @@
-﻿/* 
-// Задача 1. Вывести день недели.
+﻿ 
+// Задача 10. Вывести вторую цифру введенного числа.
 
-Console.Write("Чтобы узнать день недели, введите число:");
-int day=Convert.ToInt32(Console.ReadLine());
+int GetSecondNum()
+{
+    int transNum = inputNum / 10;
+    transNum = transNum % 10;
+    return transNum;
+}
 
-if (day==1) Console.WriteLine("Понедельник");
-if (day==2) Console.WriteLine("Вторник");
-if (day==3) Console.WriteLine("Среда");
-if (day==4) Console.WriteLine("Четверг");
-if (day==5) Console.WriteLine("Пятница");
-if (day==6) Console.WriteLine("Суббота");
-if (day==7) Console.WriteLine("Воскресенье");
-if ((day>7) || (day<1)) Console.WriteLine("Такого дня в неделе нет");
-*/
+Console.Write("Введите 3х значное число: ");
+int number=Convert.ToInt32(Console.ReadLine());
+Console.Write("Вторая цифра " + GetSecondNum(number));
+
+
+
 
 /*
 // Задача 2. Вывести квадрат числа
@@ -88,7 +89,6 @@ if (num/2==numClon/2)
     Console.WriteLine("Четное число");
 else
     Console.WriteLine("Нечетное число");
-*/
 
 // Задача 8. Вывести ряд четных чисел до N
 
@@ -101,3 +101,5 @@ while (counter<=num)
     Console.Write(counter + " ");
     counter=counter+2;
 }
+*/
+
