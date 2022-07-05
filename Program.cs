@@ -1,7 +1,7 @@
 ﻿ 
 // Задача 10. Вывести вторую цифру введенного числа.
 
-int GetSecondNum()
+int GetSecondNum(int inputNum)
 {
     int transNum = inputNum / 10;
     transNum = transNum % 10;
