@@ -1,17 +1,27 @@
-﻿/* 
-// Задача 10. Вывести вторую цифру введенного числа.
+﻿ 
+// Задача 19. Является ли 5ти значное число палиндромом?
 
-int GetSecondNum(int inputNum)
+string GetPalindrom(int inputNum)
 {
-    int transNum = inputNum / 10;
-    transNum = transNum % 10;
-    return transNum;
+    int headNum = inputNum % 10;
+    int tailNum = inputNum / 10000;
+    inputNum = inputNum / 10;
+    inputNum = inputNum % 1000;
+    if (headNum == tailNum)
+    {
+        headNum = inputNum % 10;
+        tailNum = inputNum / 100;
+        if (headNum == tailNum) 
+            return "ДА!";
+            else return "НЕТ!";
+    }
+        else return "НЕТ!";
 }
 
-Console.Write("Введите 3х значное число: ");
+Console.Write("Введите 5ти значное число: ");
 int number=Convert.ToInt32(Console.ReadLine());
-Console.Write("Вторая цифра " + GetSecondNum(number));
-*/
+Console.Write("Число палиндром? " + GetPalindrom(number));
+
 
 /*
 // Задача 13. Вывести 3-ю цифру числа, или сообщить что её нет.
@@ -37,7 +47,7 @@ Console.Write("Третья цифра в числе " + GetThirdNum(number));
 */
 
 // Задача 15. Ввести число. Выходной ли это день?
-
+/*
 string DayOfAWeek(int inputNum)
 {
     if ((inputNum > 0) & (inputNum < 6))
@@ -52,4 +62,4 @@ string DayOfAWeek(int inputNum)
 Console.Write("Введите число:");
 int number=Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введенный день недели " + DayOfAWeek(number) + ".");
-
+*/
