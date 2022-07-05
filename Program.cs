@@ -1,4 +1,4 @@
-﻿ 
+﻿/* 
 // Задача 10. Вывести вторую цифру введенного числа.
 
 int GetSecondNum(int inputNum)
@@ -11,17 +11,30 @@ int GetSecondNum(int inputNum)
 Console.Write("Введите 3х значное число: ");
 int number=Convert.ToInt32(Console.ReadLine());
 Console.Write("Вторая цифра " + GetSecondNum(number));
+*/
 
 
+// Задача 13. Вывести 3-ю цифру числа, или сообщить что её нет.
 
 
-/*
-// Задача 2. Вывести квадрат числа
+string GetThirdNum(int inputNum)
+{
+    int transNum = inputNum / 100;
+    if (transNum > 0) 
+    {
+        transNum = transNum % 10;
+    }
+    else
+    {
+        return "нет (третьей цифры нет)";    
+    }
+return Convert.ToString(transNum);
+}
 
 Console.Write("Введите число:");
-int num=Convert.ToInt32(Console.ReadLine());
-Console.Write("Квадрат числа равен " + num*num);
-*/
+int number=Convert.ToInt32(Console.ReadLine());
+Console.Write("Третья цифра в числе " + GetThirdNum(number));
+
 
 // Задача 3. Наименьшее и наибольшее из 2х чисел
 /*
