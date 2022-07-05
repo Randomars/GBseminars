@@ -1,6 +1,6 @@
 ﻿ 
 // Задача 19. Является ли 5ти значное число палиндромом?
-
+/*
 string GetPalindrom(int inputNum)
 {
     int headNum = inputNum % 10;
@@ -22,29 +22,27 @@ Console.Write("Введите 5ти значное число: ");
 int number=Convert.ToInt32(Console.ReadLine());
 Console.Write("Число палиндром? " + GetPalindrom(number));
 
-
-/*
-// Задача 13. Вывести 3-ю цифру числа, или сообщить что её нет.
+*/
 
 
-string GetThirdNum(int inputNum)
+// Задача 23. Вывести число. Вывести таблицу кубов.
+
+
+void ShowKub(int inputNum)
 {
-    int transNum = inputNum / 100;
-    if (transNum > 0) 
+    int countNum = 1;
+    while (countNum <= inputNum)
     {
-        transNum = transNum % 10;
+        Console.Write(countNum*countNum*countNum + " ");        
+        countNum++;
     }
-    else
-    {
-        return "нет (третьей цифры нет)";    
-    }
-return Convert.ToString(transNum);
+
 }
 
-Console.Write("Введите число:");
+Console.Write("Введите число: ");
 int number=Convert.ToInt32(Console.ReadLine());
-Console.Write("Третья цифра в числе " + GetThirdNum(number));
-*/
+ShowKub(number);
+
 
 // Задача 15. Ввести число. Выходной ли это день?
 /*
