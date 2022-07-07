@@ -1,4 +1,28 @@
-﻿ 
+﻿// Задача 27. Принять число. Выдать сумму цифр числа.
+
+void PrintNumSumm(int num)
+{
+    int res = 0;
+    while (num > 0)
+    {
+        res = res + num % 10;
+        num = num / 10;
+    }
+    Console.WriteLine($"Сумма цифр числа: {res}");
+}
+
+
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+PrintNumSumm(number);
+
+
+
+// Задача 29. Задать массив из m элементов. Вывести его на экран.
+
+
+
+
 // Задача 19. Является ли 5ти значное число палиндромом?
 /*
 string GetPalindrom(int inputNum)
@@ -26,7 +50,7 @@ Console.Write("Число палиндром? " + GetPalindrom(number));
 
 
 // Задача 23. Вывести число. Вывести таблицу кубов.
-
+/*
 
 void ShowKub(int inputNum)
 {
@@ -42,22 +66,4 @@ void ShowKub(int inputNum)
 Console.Write("Введите число: ");
 int number=Convert.ToInt32(Console.ReadLine());
 ShowKub(number);
-
-
-// Задача 15. Ввести число. Выходной ли это день?
-/*
-string DayOfAWeek(int inputNum)
-{
-    if ((inputNum > 0) & (inputNum < 6))
-        return "рабочий";
-    else
-        if ((inputNum == 6) || (inputNum == 7))
-            return "выходной";
-        else
-            return "не существует";
-}
-
-Console.Write("Введите число:");
-int number=Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введенный день недели " + DayOfAWeek(number) + ".");
 */
