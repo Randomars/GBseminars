@@ -1,5 +1,5 @@
 ﻿// Задача 27. Принять число. Выдать сумму цифр числа.
-
+/*
 void PrintNumSumm(int num)
 {
     int res = 0;
@@ -16,54 +16,31 @@ Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 PrintNumSumm(number);
 
-
+*/
 
 // Задача 29. Задать массив из m элементов. Вывести его на экран.
 
-
-
-
-// Задача 19. Является ли 5ти значное число палиндромом?
-/*
-string GetPalindrom(int inputNum)
+void FillArray(int[] someArray)
 {
-    int headNum = inputNum % 10;
-    int tailNum = inputNum / 10000;
-    inputNum = inputNum / 10;
-    inputNum = inputNum % 1000;
-    if (headNum == tailNum)
-    {
-        headNum = inputNum % 10;
-        tailNum = inputNum / 100;
-        if (headNum == tailNum) 
-            return "ДА!";
-            else return "НЕТ!";
-    }
-        else return "НЕТ!";
+    int length = someArray.Length;
+    for (int i = 0; i < length; i++)
+        someArray[i] = new Random().Next(1,100);
 }
 
-Console.Write("Введите 5ти значное число: ");
-int number=Convert.ToInt32(Console.ReadLine());
-Console.Write("Число палиндром? " + GetPalindrom(number));
-
-*/
-
-
-// Задача 23. Вывести число. Вывести таблицу кубов.
-/*
-
-void ShowKub(int inputNum)
+void PrintArray(int[] someArray)
 {
-    int countNum = 1;
-    while (countNum <= inputNum)
+    int length = someArray.Length;
+    Console.WriteLine("Ваш массив:");
+    for (int i = 0; i < length; i++)
     {
-        Console.Write(countNum*countNum*countNum + " ");        
-        countNum++;
+        Console.Write(someArray[i] + ", ");
     }
-
 }
 
-Console.Write("Введите число: ");
-int number=Convert.ToInt32(Console.ReadLine());
-ShowKub(number);
-*/
+Console.Write("Введите размерность массива: ");
+int number = Convert.ToInt32(Console.ReadLine());
+int[] myArray = new int [number];
+FillArray(myArray);
+PrintArray(myArray);
+
+
