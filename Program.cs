@@ -36,7 +36,7 @@ Console.WriteLine("Количество четных чисел в массив�
 */
 
 // Задача 36. Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
-
+/*
 int[] CreateRandomArray(int size, int minValue, int maxValue)
 {
     int[] newArray = new int[size];
@@ -70,11 +70,55 @@ Console.WriteLine("Ваш массив: ");
 ShowArray(myArray);
 Console.WriteLine("Сумма нечетных позиций: " + GetOddIndexSumm(myArray));
 
-
+*/
 
 
 
 // Задача 38. Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
 
+double[] CreateArray(int size)
+{
+    double[] newArray = new double[size];
+
+    Console.WriteLine($"Creating array {size}-size.");
+    for (int i = 0; i < size; i++)
+    {
+        Console.Write($"Input {i + 1} element:");
+        newArray[i] = Convert.ToDouble(Console.ReadLine());
+    }
+    Console.WriteLine();
+    return newArray;
+}
+
+void ShowArray(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+double FindMax(double[] array)
+{
+    double res = array[0];
+    for (int i = 1; i < array.Length; i++)
+        if (array[i] > res) res = array[i];
+    return res;
+}
+
+double FindMin(double[] array)
+{
+    double res = array[0];
+    for (int i = 1; i < array.Length; i++)
+        if (array[i] < res) res = array[i];
+    return res;
+}
+
+
+Console.Write("Введите размер массива: ");
+int mySize = Convert.ToInt32(Console.ReadLine());
+double[] myArray = CreateArray(mySize);
+Console.WriteLine("Ваш массив: ");
+ShowArray(myArray);
+Console.WriteLine("Разница между максимальным и минимальным: " + (FindMax(myArray) - FindMin(myArray)));
 
