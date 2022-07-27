@@ -1,4 +1,48 @@
-﻿// Задача 34. Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+﻿void ShowArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+int InputNum(string tip)
+{
+    Console.Write(tip);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+// Задача 41: Пользователь вводит M чисел. Cколько чисел больше 0 ввёл пользователь.
+
+
+int[] InputArray(int size)
+{
+    int[] newArray = new int[size];
+
+    Console.WriteLine($"Создаем массив из {size} чисел.");
+    for (int i = 0; i < size; i++)
+    {
+        newArray[i] = InputNum($"Введите {i + 1} число: ");
+    }
+    return newArray;
+}
+
+void CountPositive(int[] array)
+{
+    int countPos = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > 0) countPos++;
+    }
+    Console.WriteLine($"Из {array.Length} чисел {countPos} больше 0.");
+}
+
+int m = InputNum("Скольк очисел в массиве (M)?: ");
+int[] myArray = InputArray(m);
+ShowArray(myArray);
+CountPositive(myArray);
+
+// Задача 34. Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 /*
 int[] CreateRandomArray(int size, int minValue, int maxValue)
 {
@@ -9,12 +53,7 @@ int[] CreateRandomArray(int size, int minValue, int maxValue)
     return newArray;
 }
 
-void ShowArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-        Console.Write(array[i] + " ");
-    Console.WriteLine();
-}
+
 
 int GetEvenCount(int[] array)
 {
@@ -76,7 +115,7 @@ Console.WriteLine("Сумма нечетных позиций: " + GetOddIndexSu
 
 // Задача 38. Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
-
+/*
 double[] CreateArray(int size)
 {
     double[] newArray = new double[size];
@@ -121,4 +160,4 @@ double[] myArray = CreateArray(mySize);
 Console.WriteLine("Ваш массив: ");
 ShowArray(myArray);
 Console.WriteLine("Разница между максимальным и минимальным: " + (FindMax(myArray) - FindMin(myArray)));
-
+*/
