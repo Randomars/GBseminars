@@ -1,5 +1,39 @@
-﻿
+﻿int InputNum(string tip)
+{
+    Console.Write(tip);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+int[,] CreateRamdom2DArray(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] newArray = new int[rows, columns];
+    
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            newArray[i, j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return newArray;
+}
+
+void Print2DArray(int[,] takeArray)
+{
+    for (int i = 0; i < takeArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < takeArray.GetLength(1); j++)
+        {
+            Console.Write(takeArray[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+
 // Задача 47. Двумерный массив размером m×n, заполненный случайными вещественными числами.
+
+/*
 
 double[,] CreateRamdom2DArray(int rows, int columns, int minValue, int maxValue)
 {
@@ -32,13 +66,6 @@ void Print2DArray(double[,] takeArray)
     }
 }
 
-int InputNum(string tip)
-{
-    Console.Write(tip);
-    return Convert.ToInt32(Console.ReadLine());
-}
-
-
 int m = 3;
 int n = 4;
 int myMax = 10;
@@ -47,4 +74,25 @@ int myMin = -10;
 double[,] myArray = CreateRamdom2DArray(m, n, myMin, myMax);
 Print2DArray(myArray);
 
+*/
 
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+
+int m = 3;
+int n = 4;
+int myMax = 9;
+int myMin = 1;
+
+Console.WriteLine("Создаю массив.");
+int[,] myArray = CreateRamdom2DArray(m, n, myMin, myMax);
+Print2DArray(myArray);
+Console.WriteLine("Введите позицию элемента.");
+m = InputNum("Номер строки: ");
+n = InputNum("Номер столбца: ");
+if (m > 0 && 
+    n > 0 && 
+    m <= myArray.GetLength(0) &&
+    n <= myArray.GetLength(1))
+    Console.WriteLine($"Ваше число {myArray[m - 1, n - 1]}.");
+else Console.WriteLine("Такого элемента в массиве нет.");
