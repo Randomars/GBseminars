@@ -78,6 +78,7 @@ Print2DArray(myArray);
 
 // Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
 
+/*
 
 int m = 3;
 int n = 4;
@@ -96,3 +97,31 @@ if (m > 0 &&
     n <= myArray.GetLength(1))
     Console.WriteLine($"Ваше число {myArray[m - 1, n - 1]}.");
 else Console.WriteLine("Такого элемента в массиве нет.");
+*/
+
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+void Average(int[,] array)
+{
+    double summ = 0;
+    for (int i = 0; i < array.GetLength(1); i++)
+    {
+        summ = 0;
+        for (int j = 0; j < array.GetLength(0); j++)
+        {
+            summ = summ + array[j,i];
+        }
+        Console.Write($"{summ / array.GetLength(0)} ");
+    }
+}
+
+int m = 3;
+int n = 4;
+int myMax = 9;
+int myMin = 1;
+
+Console.WriteLine("Создаю массив.");
+int[,] myArray = CreateRamdom2DArray(m, n, myMin, myMax);
+Print2DArray(myArray);
+Console.WriteLine("Среднее арифметическое по столбцам:");
+Average(myArray);
