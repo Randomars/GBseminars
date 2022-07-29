@@ -1,8 +1,35 @@
-﻿void ShowArray(int[] array)
+﻿
+// Задача 47. Двумерный массив размером m×n, заполненный случайными вещественными числами.
+
+double[,] CreateRamdom2DArray(int rows, int columns, int minValue, int maxValue)
 {
-    for (int i = 0; i < array.Length; i++)
-        Console.Write(array[i] + " ");
-    Console.WriteLine();
+    double[,] newArray = new double[rows, columns];
+    const int accuracy = 10;
+    double aLeft = 0;
+    double aRight = 0;
+
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            aLeft = new Random().Next(minValue, maxValue);
+            aRight = new Random().Next(0, accuracy);
+            newArray[i, j] =  aLeft + aRight / accuracy;                                
+        }
+    }
+    return newArray;
+}
+
+void Print2DArray(double[,] takeArray)
+{
+    for (int i = 0; i < takeArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < takeArray.GetLength(1); j++)
+        {
+            Console.Write(takeArray[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
 }
 
 int InputNum(string tip)
@@ -11,58 +38,13 @@ int InputNum(string tip)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-// Задача 41: Пользователь вводит M чисел. Cколько чисел больше 0 ввёл пользователь.
 
-/*
-int[] InputArray(int size)
-{
-    int[] newArray = new int[size];
+int m = 3;
+int n = 4;
+int myMax = 10;
+int myMin = -10;
 
-    Console.WriteLine($"Создаем массив из {size} чисел.");
-    for (int i = 0; i < size; i++)
-    {
-        newArray[i] = InputNum($"Введите {i + 1} число: ");
-    }
-    return newArray;
-}
-
-void CountPositive(int[] array)
-{
-    int countPos = 0;
-
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] > 0) countPos++;
-    }
-    Console.WriteLine($"Из {array.Length} чисел {countPos} больше 0.");
-}
-
-int m = InputNum("Скольк очисел в массиве (M)?: ");
-int[] myArray = InputArray(m);
-ShowArray(myArray);
-CountPositive(myArray);
-
-*/
-
-// Задача 43: Найти точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
-// значения b1, k1, b2 и k2 задаются пользователем. b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
-
-void LineCross(int k1, int b1, int k2, int b2)
-{
-    double x = b2 - b1;
-    double x1 = k1 - k2;
-    x = x / x1;
-    
-    // double x = (b2-b1)/(k1-k2);
-    
-    double y = k1 * x + b1;
-    Console.WriteLine($"Точка пересечения ({x}; {y}).");
-}
+double[,] myArray = CreateRamdom2DArray(m, n, myMin, myMax);
+Print2DArray(myArray);
 
 
-Console.WriteLine("Задайте параметры двух прямых заданных уравнениями вида (y = k * x + b) для поиска точки пересечения.");
-int k1 = InputNum("Значение k1: ");
-int b1 = InputNum("Значение b1: ");
-int k2 = InputNum("Значение k2: ");
-int b2 = InputNum("Значение b2: ");
-LineCross(k1, b1, k2, b2);
