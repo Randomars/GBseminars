@@ -31,6 +31,50 @@ void Print2DArray(int[,] takeArray)
 }
 
 
+// Задача 54: Упорядочить по убыванию элементы каждой строки двумерного массива.
+
+int[,] SortStringsDesc(int[,] takeArray)
+{
+    bool changed = true;
+    int temp = 0;
+   
+    for (int i = 0; i < takeArray.GetLength(0); i++)
+    {
+        changed = true;
+        
+        while (changed)
+        {
+            changed = false;
+            for (int j = 1; j < takeArray.GetLength(1); j++)
+            {
+                if (takeArray[i,j-1] < takeArray[i,j])
+                {
+                    temp = takeArray[i,j-1];
+                    takeArray[i,j-1] = takeArray[i,j];
+                    takeArray[i,j] = temp;
+                    changed = true;
+                }
+            }
+        }
+       
+    }
+    return takeArray;
+}
+
+int m = 3;
+int n = 4;
+int myMax = 9;
+int myMin = 1;
+
+Console.WriteLine("Создаю массив.");
+int[,] myArray = CreateRamdom2DArray(m, n, myMin, myMax);
+Print2DArray(myArray);
+Console.WriteLine("Упорядычиваю элементы в строках по убыванию:");
+myArray = SortStringsDesc(myArray);
+Print2DArray(myArray);
+
+
+
 // Задача 47. Двумерный массив размером m×n, заполненный случайными вещественными числами.
 
 /*
@@ -101,6 +145,7 @@ else Console.WriteLine("Такого элемента в массиве нет."
 
 // Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
+/*
 void Average(int[,] array)
 {
     double summ = 0;
@@ -125,3 +170,4 @@ int[,] myArray = CreateRamdom2DArray(m, n, myMin, myMax);
 Print2DArray(myArray);
 Console.WriteLine("Среднее арифметическое по столбцам:");
 Average(myArray);
+*/
