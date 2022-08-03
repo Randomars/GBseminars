@@ -125,7 +125,7 @@ Console.WriteLine($"Наименьшая сумма элементов в {FindM
 */
 
 // Задача 62. Заполните спирально массив 4 на 4.
-
+/*
 int[,] CreateSpiralArray(int rows, int columns)
 {
     int maxNum = rows * columns;
@@ -172,4 +172,19 @@ int n = 6;
 Console.WriteLine("Создаю массив.");
 int[,] myArray = CreateSpiralArray(m, n);
 Print2DArray(myArray);
+*/
+
+// Задача 64: Найти кол-во цифр в числе N рекурсивным методом
+
+int CountDigit(int n)
+{
+    if(n / 10 >= 1 )
+        return 1 + CountDigit(n / 10);
+    else
+        return 1;
+}
+
+int myNum = InputNum("Введите число: ");
+Console.WriteLine($"В вашем числе {CountDigit(myNum)} цифр.");
+
 
