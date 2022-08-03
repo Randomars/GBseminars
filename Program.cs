@@ -79,6 +79,8 @@ Print2DArray(myArray);
 
 // Задача 56: В массиве найти строку с наименьшей суммой элементов.
 
+/*
+
 int[,] SummInStrings(int[,] takeArray)
 {
     int[,] stSumm = new int[takeArray.GetLength(0), 1];
@@ -120,4 +122,54 @@ summArray = SummInStrings(myArray);
 Print2DArray(summArray);
 Console.WriteLine($"Наименьшая сумма элементов в {FindMin(summArray) + 1} строке.");
 
+*/
+
+// Задача 62. Заполните спирально массив 4 на 4.
+
+int[,] CreateSpiralArray(int rows, int columns)
+{
+    int maxNum = rows * columns;
+    int counter = 1;
+    int[,] newArray = new int[rows, columns];
+    int i = 0;
+    int j = 0;
+    int di = 0;
+    int dj = 1;
+    
+
+    while (counter <= maxNum)
+        {
+            newArray[i, j] = counter;
+                 
+            if (j + dj > columns - 1 || 
+                j + dj < 0 || 
+                i + di > rows - 1 || 
+                i + di < 0 ||
+                newArray[i + di, j + dj] != 0)
+                {
+                    if (di == 0)
+                    {
+                        di = dj;
+                        dj = 0;
+                    }
+                    else
+                    {
+                        dj = - di;
+                        di = 0;
+                    }
+                }
+            counter++;
+            j = j + dj;
+            i = i + di;
+        }
+    return newArray;    
+}
+
+
+int m = 6;
+int n = 6;
+
+Console.WriteLine("Создаю массив.");
+int[,] myArray = CreateSpiralArray(m, n);
+Print2DArray(myArray);
 
