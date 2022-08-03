@@ -176,6 +176,7 @@ Print2DArray(myArray);
 
 // Задача 64: Найти кол-во цифр в числе N рекурсивным методом
 
+/*
 int CountDigit(int n)
 {
     if(n / 10 >= 1 )
@@ -187,4 +188,23 @@ int CountDigit(int n)
 int myNum = InputNum("Введите число: ");
 Console.WriteLine($"В вашем числе {CountDigit(myNum)} цифр.");
 
+*/
+
+// Задача 66: Найти сумму натуральных элементов от M до N
+
+int SumNatural(int a, int b)
+{
+    int dd = 0;
+    if (a < b) dd = 1;
+        else dd = -1;
+    
+    if (a == b)
+        return a;
+    else
+        return a + SumNatural(a + dd, b);
+}
+
+int myM = InputNum("Введите первое число (M):");
+int myN = InputNum("Введите второе число (N):");
+Console.WriteLine($"Сумма натуральных элементов: {SumNatural(myM, myN)}");
 
